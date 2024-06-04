@@ -51,7 +51,7 @@ public class SingletonAuthor : MonoBehaviour
     
     public struct NumBananasFarmed : IComponentData
     {
-        public int Value;
+        public ulong Value;
     }
 
     public struct BananaFarmPrefab : IComponentData

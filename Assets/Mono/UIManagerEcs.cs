@@ -17,7 +17,6 @@ namespace Mono
         [SerializeField] private GameObject prefab;
 
         private static UIManagerEcs _manager;
-        private ulong _bananasSpawned;
         private int _numFarms;
 
         private EntityManager _entityManager;
@@ -36,7 +35,6 @@ namespace Mono
             slider.onValueChanged.AddListener(v => sliderText.text = v.ToString("N0"));
 
             numFarmsText.text = _numFarms.ToString();
-            bananasSpawnedText.text = _bananasSpawned.ToString();
             
         }
 

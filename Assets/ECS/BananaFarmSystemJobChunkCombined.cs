@@ -1,6 +1,7 @@
 using Unity.Burst;
 using Unity.Burst.Intrinsics;
 using Unity.Entities;
+using UnityEngine;
 
 namespace ECS
 {
@@ -33,7 +34,6 @@ namespace ECS
 
             float deltaTime = SystemAPI.Time.DeltaTime;
 
-            
             var job = new BananaFarmSystemChunkJobCombined
             {
                 DeltaTime = deltaTime,
@@ -52,7 +52,7 @@ namespace ECS
     {
         public float DeltaTime;
         public ComponentTypeHandle<BananaAuthor.GroupedTimeToSpawn> ComponentHandle;
-        public int NumBananasFarmed;
+        public ulong NumBananasFarmed;
         public Entity SingletonEntity;
         public EntityCommandBuffer.ParallelWriter ECB;
 
