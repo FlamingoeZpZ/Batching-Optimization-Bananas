@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToBanana: 0.2
-  separateComponents: 0
+  separateComponents: 1

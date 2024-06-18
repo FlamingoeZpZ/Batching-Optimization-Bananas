@@ -83,7 +83,7 @@ namespace Mono
         {
             var x  = _entityManager.CreateEntityQuery(typeof(SingletonAuthor.NumBananasFarmed))
                 .ToComponentDataArray<SingletonAuthor.NumBananasFarmed>(Allocator.Temp);
-            //if (x.Length == 0) return;
+            if (x.Length == 0) return;
             bananasSpawnedText.text = (x[0].Value).ToString();
         }
     }

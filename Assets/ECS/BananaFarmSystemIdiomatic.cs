@@ -30,7 +30,6 @@ public partial struct BananaFarmSystemIdiomatic : ISystem
                  ++value;
             }
         }
-        
         foreach (var (timeToSpawn, currentTime) in SystemAPI.Query<RefRO<BananaAuthor.TimeToSpawnComponent>, RefRW<BananaAuthor.CurrentTimeToSpawnComponent>>())
         {
             currentTime.ValueRW.CurrentTime += deltaTime;

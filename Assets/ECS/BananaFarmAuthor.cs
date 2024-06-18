@@ -32,7 +32,11 @@ public class BananaAuthor : MonoBehaviour
                     });
                     break;
                 case EComponentSeriesType.Seperated:
-                    AddComponent(me, new TimeToSpawnComponent
+                    AddSharedComponent(me, new SharedTimeToSpawnComponent
+                    {
+                        TimeToSpawn = authoring.timeToBanana
+                    });
+                    AddComponent(me, new TimeToSpawnComponent()
                     {
                         TimeToSpawn = authoring.timeToBanana
                     });
@@ -71,7 +75,12 @@ public class BananaAuthor : MonoBehaviour
             }
         }
     }
-    public struct TimeToSpawnComponent : IComponentData, IEnableableComponent
+    public struct TimeToSpawnComponent : IComponentData
+    {
+        public float TimeToSpawn;
+    }
+    
+    public struct SharedTimeToSpawnComponent : ISharedComponentData
     {
         public float TimeToSpawn;
     }
@@ -81,12 +90,12 @@ public class BananaAuthor : MonoBehaviour
         public BlobAssetReference<TimeToSpawnComponent> Blob;
     }
 
-    public struct CurrentTimeToSpawnComponent : IComponentData
+    public struct CurrentTimeToSpawnComponent : IComponentData, IEnableableComponent
     {
         public float CurrentTime;
     }
 
-    public struct GroupedTimeToSpawn : IComponentData
+    public struct GroupedTimeToSpawn : IComponentData, IEnableableComponent
     {
         public float TimeToSpawn;
         public float CurrentTime;
